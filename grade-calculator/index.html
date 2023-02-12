@@ -12,23 +12,23 @@
 <div id="grade_calc">
 	<div>
 		Participation (studio):
-		<input v-model="participation.studio" /> / 100
+		<input type="number" min="0" max="100" v-model="participation.studio" /> / 100
 	</div>
 	<div>
 		Homework feedback:
-		<input v-model="participation.feedback" /> / 100
+		<input type="number" min="0" max="100" v-model="participation.feedback" /> / 100
 	</div>
 	<div>
 		General Participation:
-		<input v-model="participation.other" /> / 100
+		<input type="number" min="0" max="100" v-model="participation.other" /> / 100
 	</div>
 	
 
 	<div v-for="(hw, i) in homeworks">
 		<!-- {{ homeworks.length }} homeworks: -->
-		Homework {{i+1}} <input type="number" v-model="homeworks[i]"/> / 100
+		Homework {{i+1}} <input type="number" min="0" max="100" v-model="homeworks[i]"/> / 100
 	</div>
-	<button @click="addHomework(i)">Add homework</button>
+	<button @click="addHomework()" :disabled="homeworks.length>=12">Add homework</button>
 	<div>Projected class grade: {{ calculatedGrade }}</div>
 </div>
 

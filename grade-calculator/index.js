@@ -43,7 +43,7 @@ let app = createApp({
 		 * Add a new blank homework	to the list.
 		 * Does not prevent more homeworks than 12 from being added.
 		 */
-		addHomework () {
+		addHomework() {
 			this.homeworks.push(null);
 		}
 	}
